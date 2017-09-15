@@ -8,7 +8,9 @@ window.onload = function() {
   if(e.keyCode === 17) {ctrl = true;}
   else if(e.keyCode === 13 && ctrl) {
    id('output').innerHTML = id('html').value;
-   eval(id('js').value);
+   try{
+    eval(id('js').value);
+   }catch(ex){id('log').value = ex.message;}
   }
   else if(e.keyCode === 219 && ctrl) {
    console.log('it works!');
